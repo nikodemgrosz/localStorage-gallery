@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madryt</title>
+    <link rel="stylesheet" href="stylowanie.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="realmadryt.html">MENU</a></li>
+            <li><a href="ulubione.html" target="_blank">ULUBIONE</a></li>
+        </ul>
+    </div>
+    <div id="glowna">
+        
+        
+    
+    
+    </div>
+
+    <script>
+        let pilkarze = [];
+         const glowna=document.getElementById('glowna');
+        let odczyt = localStorage.getItem("dane");
+        pilkarze=[
+            {
+                name:"Andriy Lunin",
+                img:'pilkarze/Andriy_Lunin.jpg',
+                liked:false
+            },
+            {
+                name:"Antonio Rudiger",
+                img:'pilkarze/antonio_rudiger.jpg',
+                liked:false
+            },
+            {
+                name:"Daniel Carvajal",
+                img:'pilkarze/daniel_carvajal.jpg',
+                liked:false
+            },
+            {
+                name:"David Alaba",
+                img:'pilkarze/david_alaba.jpg',
+                liked:false
+            },
+            {
+                name:"Ede Militao",
+                img:'pilkarze/eder_militao.jpg',
+                liked:false
+            },
+            {
+                name:"Ferland Mendy",
+                img:'pilkarze/ferland_mendy.jpg',
+                liked:false
+            },
+            {
+                name:"Fran Garcia",
+                img:'pilkarze/fran_garcia.jpg',
+                liked:false
+            },
+            {
+                name:"Kepa Arrizabalag",
+                img:'pilkarze/KEPA_Arrizabalaga.jpg',
+                liked:false
+            },
+            {
+                name:"Lucan Vazquez",
+                img:'pilkarze/lucas_vazquez.jpg',
+                liked:false
+            },
+            {
+                name:"Nacho Fernandez",
+                img:'pilkarze/nacho_fernandez.jpg',
+                liked:false
+            },
+            {
+                name:"Thibaut Courtois",
+                img:'pilkarze/thibaut_courtois.jpg',
+                liked:false
+            },
+            {
+                name:"Jude Belingham",
+                img:' pilkarze/jude_belingham.jpg',
+                liked:false
+            }
+           
+        ]
+        if(odczyt != null)
+        {
+            pilkarze = JSON.parse(odczyt);
+        }
+        else{
+
+        
+       
+        
+        }
+        function klik(user,serce) {
+
+            if(user.liked==false){
+
+                serce.src='pilkarze/icon-on.png';
+                user.liked=true;
+                zapis();
+            }
+            else if(user.liked==true){
+
+                serce.src='pilkarze/icon-off.png';
+                user.liked=false;
+                    zapis();
+}
+
+}
+        for(let i=0;i<pilkarze.length;i++){
+        
+            let p=document.createElement('p');
+            let img=document.createElement('img');
+            let div=document.createElement('div');
+            let serce=document.createElement('img');
+            serce.id="serce";
+            div.id="nazwaid";
+       
+            
+            serce.onclick = function(){
+
+                klik(pilkarze[i],serce)
+            };
+
+            img.src=pilkarze[i].img;
+
+            
+             if(pilkarze[i].liked==false){
+                serce.src='pilkarze/icon-off.png';
+            }
+            else 
+            {
+                serce.src='pilkarze/icon-on.png';
+            }
+       
+
+            p.innerText=pilkarze[i].name;
+            div.appendChild(img);
+            div.appendChild(p);
+            div.appendChild(serce);
+            glowna.appendChild(div);
+           
+
+
+
+        }
+        function zapis(){
+
+        
+        let pilkarzeJSON=JSON.stringify(pilkarze);
+        localStorage.setItem("dane",pilkarzeJSON);
+
+        if(localStorage.getItem("dane") != null){
+            localStorage.getItem("dane");
+        }
+    }
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulubione</title>
+    <link rel="stylesheet" href="stylowanie.css">
+    <style>
+        body{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Polubione zdjęcia</h1>
+    <div id="polubione"></div>
+    <script>
+        const polubione=document.getElementById("polubione");
+        let ludzieJSON = [];
+        ludzieJSON = JSON.parse(localStorage.getItem("dane"));
+        if(ludzieJSON != null)
+        {
+         for(let j=0;j<ludzieJSON.length;j++)
+         {
+            if(ludzieJSON[j].liked==true)
+            {
+
+            
+            let p=document.createElement('p');
+            let img=document.createElement('img');
+            let div=document.createElement('div');                        
+            img.src=ludzieJSON[j].img;
+            p.innerText=ludzieJSON[j].name;
+            div.appendChild(img);
+            div.appendChild(p);
+            
+            polubione.appendChild(div);
+            }
+           
+
+
+
+         }
+        }
+       
+
+
+
+
+    </script>
+    
+</body>
+</html>

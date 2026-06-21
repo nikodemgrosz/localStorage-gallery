@@ -1,0 +1,73 @@
+img{
+    
+    width: 350px;
+    height: 350px;
+    
+    
+    
+   
+    
+}
+#glowna{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 100px;
+    
+   
+}
+body{
+ 
+    
+    background-color: bisque;
+  
+}
+.menu{
+    width: 200px;
+    background-color: rgb(225, 209, 115);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px dashed gray;
+   
+  
+    
+    
+   
+    
+}
+ul{
+    list-style: none;
+    margin: 10px;
+    
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.menu:hover{
+    width: 200px;
+    background-color: rgb(97, 103, 99);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px dashed gray;
+    transition: all 2s;
+   
+}
+img:hover{
+    opacity: 0.8;
+}
+#serce{
+    width: 35px;
+    height: 35px;
+    left:300px;
+    position: relative;
+    top:-45px;
+   
+   
+    
+}
+
